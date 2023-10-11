@@ -1,5 +1,5 @@
 """
-@author: Soroosh Tayebi Arasteh <soroosh.arasteh@fau.de>
+@modify: Mahshad Lotfinia <lotfinia@wsa.rwth-aachen.de>
 """
 
 #System Modules
@@ -17,12 +17,13 @@ import torch.nn.functional as F
 from torchvision import models
 
 # User Defined Modules
-from configs.serde import *
+from Defect_detection.configs.serde import *
 from utils.stopping import EarlyStoppingCallback
 import pdb
-os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
+
 epsilon = 1e-15
 
+import pdb
 
 
 class Training:

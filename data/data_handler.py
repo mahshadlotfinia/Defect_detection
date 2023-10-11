@@ -1,22 +1,24 @@
 """
-Created on January 2020.
+modified on October 2023.
 
-@author: Soroosh Tayebi Arasteh <soroosh.arasteh@fau.de>
-https://github.com/tayebiarasteh/
+@Modifier: Mahshad Lotfinia <lotfinia@wsa.rwth-aachen.de>
+https://github.com/mahshadlotfinia/
 """
 
-from torch.utils.data import Dataset
 import torch
+import pdb
+# pdb.set_trace()
+from torch.utils.data import Dataset
 import csv
 from skimage.io import imread
 from skimage.color import gray2rgb
 import numpy as np
 from sklearn.model_selection import train_test_split
 from torchvision import transforms
-from Train_Test_Valid import Mode
-from configs.serde import read_config
+from Defect_detection.Train_Test_Valid import Mode
+from Defect_detection.configs.serde import read_config
 import os.path
-import pdb
+
 
 train_mean = [0.59685254, 0.59685254, 0.59685254]
 train_std = [0.16043035, 0.16043035, 0.16043035]
@@ -127,7 +129,7 @@ def get_validation_dataset(cfg_path, valid_split_ratio):
 
 
 if __name__ == '__main__':
-    CONFIG_PATH = '/home/soroosh/Documents/Repositories/deep_learning_challenge/configs/config.json'
+    CONFIG_PATH = '/home/mahshad/Documents/Repositories/Defect_detection/Defect_detection/configs/config.json'
     train_dataset = get_train_dataset(CONFIG_PATH, valid_split_ratio=0.2)
     valid_dataset = get_validation_dataset(CONFIG_PATH, valid_split_ratio=0.2)
     # pdb.set_trace()

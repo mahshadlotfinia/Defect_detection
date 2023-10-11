@@ -1,15 +1,17 @@
 '''
-Created on January 2020.
+Modified on October 2023.
 
 This is the main function running the Training, Validation, Testing process.
 Set the hyper-parameters and model parameters here. [data parameters from config file]
 
-@author: Soroosh Tayebi Arasteh <soroosh.arasteh@fau.de>
-https://github.com/tayebiarasteh/
+@Modifier: Mahshad Lotfinia <lotfinia@wsa.rwth-aachen.de>
+https://github.com/mahshadlotfinia/
 '''
+import pdb
 
 # Deep Learning Modules
 from torch.nn import *
+# pdb.set_trace()
 import torch
 import torch.optim as optim
 
@@ -42,7 +44,7 @@ def main_train():
     optimiser_params = {'lr': lr}
     VALID_SPLIT_RATIO = 0.2
     BATCH_SIZE = 32
-    EXPERIMENT_NAME = "resnet152_pretrained_Adam_lr" + str(lr)
+    EXPERIMENT_NAME = "ML_Fist_Defect_Detection" + str(lr)
 
     if RESUME == True:
         params = open_experiment(EXPERIMENT_NAME)
@@ -88,7 +90,7 @@ def main_train():
 
 def main_test():
     '''Main function for prediction'''
-    EXPERIMENT_NAME = 'fullresnet_pretrained_Adam_lr7e-05'
+    EXPERIMENT_NAME = 'ML_Fist_Defect_Detection'
     params = open_experiment(EXPERIMENT_NAME)
     cfg_path = params['cfg_path']
 
@@ -104,11 +106,11 @@ def experiment_deleter():
     parameters = dict(lr = [7e-5], batch_size = [1])
     param_values = [v for v in parameters.values()]
     for lr, BATCH_SIZE in product(*param_values):
-        delete_experiment("resnet152_pretrained_Adam_lr" + str(lr))
+        delete_experiment("fullresnet_pretrained_Adam_lr7e-05" + str(lr))
 
 
 
 if __name__ == '__main__':
     # experiment_deleter()
     # main_train()
-    main_test()
+    main_train()
