@@ -42,7 +42,7 @@ def main_train():
     optimiser_params = {'lr': lr}
     VALID_SPLIT_RATIO = 0.2
     BATCH_SIZE = 32
-    EXPERIMENT_NAME = "resnet152_pretrained_Adam_lr" + str(lr)
+    EXPERIMENT_NAME = "First_Experiment" + str(lr)
 
     if RESUME == True:
         params = open_experiment(EXPERIMENT_NAME)
