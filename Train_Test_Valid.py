@@ -18,7 +18,7 @@ from torchvision import models
 
 # User Defined Modules
 from Defect_detection.configs.serde import *
-from utils.stopping import EarlyStoppingCallback
+from Defect_detection.utils.stopping import EarlyStoppingCallback
 import pdb
 
 epsilon = 1e-15

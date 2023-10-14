@@ -1,8 +1,8 @@
 """
 functions for writing/reading data to/from disk
 
-@modified by: Soroosh Tayebi Arasteh <soroosh.arasteh@fau.de>
-https://github.com/tayebiarasteh/
+@modified by: Mahshad Lotfinia <lotfinia@wsa.rwth-aachen.de>
+https://github.com/mahshadlotfinia/
 """
 
 import json
@@ -12,7 +12,7 @@ import warnings
 import shutil
 
 
-CONFIG_PATH = '/home/soroosh/Documents/Repositories/deep_learning_challenge/configs/config.json'
+CONFIG_PATH = '/home/mahshad/Documents/Repositories/Defect_detection/Defect_detection/configs/config.json'
 
 
 def read_config(cfg_path):
